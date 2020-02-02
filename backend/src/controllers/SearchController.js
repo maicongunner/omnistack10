@@ -15,13 +15,13 @@ module.exports = {
         $near: {
           $geometry: {
             type: 'Point',
-            coordinates: [longitude, latitude]
+            coordinates: [ Number(longitude), Number(latitude)],
           },
-          $maxDistance: 10000
-        }
-      }
+          $maxDistance: 10000,
+        },
+      },
     });
 
-    return res.json(devs);
+    return res.json({ devs });
   }
 };
